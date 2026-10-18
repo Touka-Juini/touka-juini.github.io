@@ -1,172 +1,269 @@
-<!DOCTYPE html>
-<html lang="en" class="dark scroll-smooth">
+from pathlib import Path
+
+html = r'''<!doctype html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Touka Juini | Embedded Systems & IoT Engineer</title>
-  <!-- Tailwind CSS -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1020">
+  <meta name="description" content="Touka Juini — Computer Science graduate interested in embedded systems, IoT, and connected devices. Explore selected projects, technical skills, and experience.">
+  <title>Touka Juini | Embedded Systems & IoT</title>
+
+  <!-- For a production deployment, install Tailwind and compile these styles locally.
+       This CDN version is convenient for a simple portfolio prototype. -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script>
     tailwind.config = {
-      darkMode: 'class',
       theme: {
         extend: {
           fontFamily: {
-            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-            mono: ['"JetBrains Mono"', 'monospace'],
+            sans: ['DM Sans', 'sans-serif'],
+            display: ['Space Grotesk', 'sans-serif']
           },
+          colors: {
+            ink: '#0b1020',
+            panel: '#11182b',
+            accent: '#7dd3fc',
+            mint: '#a7f3d0'
+          },
+          boxShadow: {
+            glow: '0 0 55px rgba(125, 211, 252, .08)'
+          }
         }
       }
-    }
+    };
   </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { background: #0b1020; }
+    .skip-link { position:absolute; left:-9999px; top:1rem; z-index:100; }
+    .skip-link:focus { left:1rem; padding:.75rem 1rem; background:#fff; color:#0b1020; border-radius:.75rem; }
+    a:focus-visible, button:focus-visible { outline: 3px solid #7dd3fc; outline-offset: 4px; }
+    .grid-bg {
+      background-image: linear-gradient(rgba(148,163,184,.045) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(148,163,184,.045) 1px, transparent 1px);
+      background-size: 42px 42px;
+      mask-image: linear-gradient(to bottom, black, transparent 85%);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+    }
+  </style>
 </head>
-<body class="bg-slate-950 text-slate-200 font-sans antialiased selection:bg-sky-500 selection:text-white min-h-screen relative overflow-x-hidden">
+<body class="min-h-screen overflow-x-hidden font-sans text-slate-200 antialiased selection:bg-sky-300 selection:text-slate-950">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div aria-hidden="true" class="pointer-events-none fixed inset-x-0 top-0 -z-10 h-[620px] overflow-hidden">
+    <div class="grid-bg absolute inset-0"></div>
+    <div class="absolute left-1/2 top-[-220px] h-[480px] w-[760px] -translate-x-1/2 rounded-full bg-sky-500/10 blur-[120px]"></div>
+    <div class="absolute right-[-160px] top-[220px] h-[300px] w-[300px] rounded-full bg-indigo-500/10 blur-[100px]"></div>
+  </div>
 
-  <!-- Background Decorative Glows -->
-  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-sky-500/10 blur-[120px] pointer-events-none rounded-full"></div>
-  <div class="absolute top-96 right-0 w-96 h-96 bg-indigo-500/5 blur-[140px] pointer-events-none rounded-full"></div>
-
-  <main class="max-w-4xl mx-auto px-6 py-16 relative z-10 space-y-16">
-
-    <!-- Hero Header -->
-    <header class="space-y-6 border-b border-slate-800/80 pb-12">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-500/10 border border-sky-500/20 text-sky-400 text-xs font-mono font-medium">
-        <span class="w-2 h-2 rounded-full bg-sky-400 animate-pulse"></span>
-        Available for Engineering Opportunities
+  <header class="sticky top-0 z-50 border-b border-white/[0.08] bg-ink/85 backdrop-blur-xl">
+    <nav aria-label="Main navigation" class="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-8">
+      <a href="#home" class="font-display text-lg font-bold tracking-tight text-white">TJ<span class="text-sky-300">.</span></a>
+      <div class="flex items-center gap-4 text-sm text-slate-300 sm:gap-7">
+        <a class="transition hover:text-sky-200" href="#about">About</a>
+        <a class="transition hover:text-sky-200" href="#projects">Projects</a>
+        <a class="transition hover:text-sky-200" href="#skills">Skills</a>
+        <a class="transition hover:text-sky-200" href="#experience">Experience</a>
+        <a class="rounded-full border border-sky-300/30 bg-sky-300/10 px-3 py-2 font-semibold text-sky-100 transition hover:bg-sky-300/20 sm:px-4" href="#contact">Contact</a>
       </div>
-      
-      <div class="space-y-2">
-        <h1 class="text-4xl sm:text-5xl font-extrabold text-white tracking-tight">Touka Juini</h1>
-        <p class="text-xl font-semibold bg-gradient-to-r from-sky-400 to-indigo-400 bg-clip-text text-transparent">
-          Embedded Systems & IoT Engineer
+    </nav>
+  </header>
+
+  <main id="main" class="mx-auto max-w-6xl px-5 sm:px-8">
+    <section id="home" class="grid min-h-[76vh] items-center gap-12 py-20 lg:grid-cols-[1.3fr_.7fr] lg:py-28">
+      <div>
+        <p class="mb-5 inline-flex items-center gap-2 rounded-full border border-sky-300/20 bg-sky-300/[0.07] px-3 py-1.5 text-xs font-semibold tracking-wide text-sky-200">
+          <span aria-hidden="true" class="h-2 w-2 rounded-full bg-mint"></span>
+          COMPUTER SCIENCE GRADUATE · EMBEDDED & IoT
         </p>
+        <h1 class="font-display text-5xl font-bold leading-[1.06] tracking-tight text-white sm:text-6xl lg:text-7xl">
+          Touka Juini<span class="text-sky-300">.</span>
+        </h1>
+        <p class="mt-6 max-w-2xl font-display text-2xl font-medium leading-snug text-slate-200 sm:text-3xl">
+          Building practical technology at the intersection of <span class="text-sky-200">hardware, software,</span> and connected systems.
+        </p>
+        <p class="mt-6 max-w-xl text-base leading-8 text-slate-400">
+          I’m a Computer Science graduate with an academic background in microcomputing and embedded systems. I’m interested in embedded development, IoT, automation, and reliable real-world systems.
+        </p>
+        <div class="mt-9 flex flex-wrap gap-3">
+          <a href="#projects" class="inline-flex items-center gap-2 rounded-xl bg-sky-300 px-5 py-3 text-sm font-bold text-slate-950 transition hover:bg-sky-200">
+            Explore projects <span aria-hidden="true">↘</span>
+          </a>
+          <a href="https://github.com/Touka-Juini" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/[0.03] px-5 py-3 text-sm font-semibold text-white transition hover:border-sky-200/50 hover:bg-white/[0.06]">
+            GitHub <span aria-hidden="true">↗</span>
+          </a>
+          <a href="https://www.linkedin.com/in/touka-juini/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/[0.03] px-5 py-3 text-sm font-semibold text-white transition hover:border-sky-200/50 hover:bg-white/[0.06]">
+            LinkedIn <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+        <p class="mt-5 text-xs leading-5 text-slate-500">Based in Istanbul, Türkiye · Open to relevant opportunities (edit this line to reflect your current status).</p>
       </div>
 
-      <p class="text-slate-400 text-base sm:text-lg leading-relaxed max-w-2xl font-normal">
-        Specialized in microcontrollers, real-time edge computing, firmware design (C/C++), and edge-to-cloud IoT architectures.
-      </p>
+      <aside aria-label="Portfolio focus" class="relative">
+        <div class="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-sky-300/10 via-transparent to-indigo-400/10 blur-2xl"></div>
+        <div class="relative rounded-[1.75rem] border border-white/10 bg-panel/90 p-6 shadow-glow sm:p-8">
+          <div class="flex items-center justify-between border-b border-white/10 pb-5">
+            <div>
+              <p class="text-xs font-semibold uppercase tracking-[.2em] text-slate-500">Portfolio focus</p>
+              <p class="mt-1 font-display text-lg font-semibold text-white">From concept to prototype</p>
+            </div>
+            <span aria-hidden="true" class="text-2xl text-sky-200">⌘</span>
+          </div>
+          <div class="space-y-5 py-6">
+            <div class="flex gap-4">
+              <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-sky-300/20 bg-sky-300/10 text-sky-200">01</span>
+              <div><h2 class="font-semibold text-white">Embedded systems</h2><p class="mt-1 text-sm leading-6 text-slate-400">Microcontrollers, device logic, and hardware/software integration.</p></div>
+            </div>
+            <div class="flex gap-4">
+              <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-emerald-300/20 bg-emerald-300/10 text-emerald-200">02</span>
+              <div><h2 class="font-semibold text-white">Connected devices</h2><p class="mt-1 text-sm leading-6 text-slate-400">IoT concepts, data exchange, monitoring, and user alerts.</p></div>
+            </div>
+            <div class="flex gap-4">
+              <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-indigo-300/20 bg-indigo-300/10 text-indigo-200">03</span>
+              <div><h2 class="font-semibold text-white">Automation</h2><p class="mt-1 text-sm leading-6 text-slate-400">Sensor-driven decisions and practical control-system ideas.</p></div>
+            </div>
+          </div>
+          <div class="rounded-xl border border-white/[0.08] bg-black/20 p-4">
+            <p class="text-xs font-semibold uppercase tracking-wider text-slate-500">Guiding principle</p>
+            <p class="mt-2 text-sm leading-6 text-slate-300">Clear documentation. Measurable testing. Honest engineering.</p>
+          </div>
+        </div>
+      </aside>
+    </section>
 
-      <!-- Action Buttons -->
-      <div class="flex flex-wrap gap-4 pt-2">
-        <a href="https://github.com/Touka-Juini" target="_blank" class="inline-flex items-center gap-2 px-5 py-2.5 bg-slate-900 hover:bg-slate-800 text-slate-200 text-sm font-semibold rounded-xl border border-slate-700/80 transition duration-200 shadow-sm hover:border-slate-600">
-          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-          GitHub
-        </a>
-        <a href="https://linkedin.com/in/touka-juini" target="_blank" class="inline-flex items-center gap-2 px-5 py-2.5 bg-sky-600 hover:bg-sky-500 text-white text-sm font-semibold rounded-xl transition duration-200 shadow-md shadow-sky-600/20">
-          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-          LinkedIn
-        </a>
-      </div>
-    </header>
-
-    <!-- Technical Stack Section -->
-    <section class="space-y-4">
-      <h2 class="text-xs font-mono font-bold uppercase tracking-wider text-slate-400">Technical Skills & Ecosystem</h2>
-      <div class="flex flex-wrap gap-2">
-        <span class="px-3.5 py-1.5 bg-slate-900 border border-slate-800 text-sky-300 text-xs font-mono font-medium rounded-lg">C / C++</span>
-        <span class="px-3.5 py-1.5 bg-slate-900 border border-slate-800 text-sky-300 text-xs font-mono font-medium rounded-lg">Python</span>
-        <span class="px-3.5 py-1.5 bg-slate-900 border border-slate-800 text-sky-300 text-xs font-mono font-medium rounded-lg">Raspberry Pi</span>
-        <span class="px-3.5 py-1.5 bg-slate-900 border border-slate-800 text-sky-300 text-xs font-mono font-medium rounded-lg">STM32 / AVR</span>
-        <span class="px-3.5 py-1.5 bg-slate-900 border border-slate-800 text-sky-300 text-xs font-mono font-medium rounded-lg">I2C / SPI / UART / PWM</span>
-        <span class="px-3.5 py-1.5 bg-slate-900 border border-slate-800 text-sky-300 text-xs font-mono font-medium rounded-lg">Firebase Firestore</span>
+    <section id="about" class="border-t border-white/10 py-16 sm:py-20">
+      <div class="grid gap-8 md:grid-cols-[.65fr_1.35fr]">
+        <div><p class="text-xs font-bold uppercase tracking-[.22em] text-sky-200">01 / About</p><h2 class="mt-3 font-display text-3xl font-bold text-white sm:text-4xl">Curious by design.</h2></div>
+        <div class="max-w-3xl">
+          <p class="text-lg leading-8 text-slate-300">My academic background is in Computer Science, with a focus on Microcomputing and Embedded Systems. I enjoy exploring how software interacts with physical devices and how small, well-designed systems can solve practical problems.</p>
+          <p class="mt-4 leading-7 text-slate-400">This portfolio brings together selected academic and personal work. Each project should include the actual design decisions, your individual contribution, test evidence, and lessons learned—not just a list of technologies.</p>
+          <div class="mt-7 grid gap-3 sm:grid-cols-2">
+            <div class="rounded-2xl border border-white/10 bg-white/[0.025] p-5"><p class="text-sm text-slate-500">Degree</p><p class="mt-1 font-semibold text-white">Licence in Computer Science</p><p class="mt-1 text-sm text-slate-400">Microcomputing & Embedded Systems</p></div>
+            <div class="rounded-2xl border border-white/10 bg-white/[0.025] p-5"><p class="text-sm text-slate-500">Graduation</p><p class="mt-1 font-semibold text-white">June 2025</p><p class="mt-1 text-sm text-slate-400">ISAMM · Tunisia</p></div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- Projects Section -->
-    <section class="space-y-8">
-      <div class="flex items-center justify-between border-b border-slate-800/80 pb-4">
-        <h2 class="text-2xl font-bold text-white tracking-tight">Featured Engineering Projects</h2>
-        <span class="text-xs font-mono text-slate-400">3 Major Systems</span>
+    <section id="projects" class="border-t border-white/10 py-16 sm:py-20">
+      <div class="mb-9 flex flex-col justify-between gap-3 sm:flex-row sm:items-end">
+        <div><p class="text-xs font-bold uppercase tracking-[.22em] text-sky-200">02 / Selected work</p><h2 class="mt-3 font-display text-3xl font-bold text-white sm:text-4xl">Projects with a purpose.</h2></div>
+        <p class="max-w-md text-sm leading-6 text-slate-400">Replace or supplement these summaries with verified repository links, photos, diagrams, test results, and your personal contribution.</p>
       </div>
 
-      <div class="space-y-8">
-
-        <!-- Project 1: Smart Pill Box -->
-        <article class="group relative bg-slate-900/60 border border-slate-800/80 hover:border-slate-700/90 rounded-2xl p-6 sm:p-8 transition-all duration-300 hover:shadow-xl hover:shadow-sky-500/5">
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
-            <h3 class="text-xl font-bold text-white group-hover:text-sky-400 transition">
-              Connected IoT Smart Pill Dispenser
-            </h3>
-            <span class="inline-self-start sm:inline-self-auto text-xs font-mono text-sky-400 bg-sky-500/10 border border-sky-500/20 px-3 py-1 rounded-full">
-              Raspberry Pi • Firebase • Python
-            </span>
-          </div>
-
-          <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-6 font-normal">
-            Automated healthcare edge device designed to dispense medication on scheduled intervals. Integrates physical hatch actuation with cloud database synchronization and mobile alert logging.
-          </p>
-
-          <div class="space-y-2 mb-6 bg-slate-950/50 p-4 rounded-xl border border-slate-800/50">
-            <h4 class="text-xs font-mono uppercase text-slate-400 font-semibold mb-2">Key Hardware & Architecture Features:</h4>
-            <ul class="text-xs sm:text-sm text-slate-300 space-y-1.5 list-disc list-inside font-mono">
-              <li>PWM Servo motor compartment hatch control</li>
-              <li>I2C RGB LCD display interface & GPIO piezo buzzer alerts</li>
-              <li>Google Firebase Firestore NoSQL real-time status logging</li>
-            </ul>
-          </div>
-
-          <a href="https://github.com/Touka-Juini/smart-pill-box" target="_blank" class="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-sky-400 hover:text-sky-300 transition group/link">
-            <span>View Documentation & Source Code</span>
-            <span class="group-hover/link:translate-x-1 transition-transform">&rarr;</span>
-          </a>
+      <div class="grid gap-5 lg:grid-cols-2">
+        <article class="group rounded-2xl border border-white/10 bg-panel/70 p-6 transition duration-300 hover:-translate-y-1 hover:border-sky-200/30 sm:p-7">
+          <div class="mb-6 flex items-start justify-between gap-4"><span class="rounded-lg border border-sky-300/20 bg-sky-300/10 px-3 py-1.5 text-xs font-semibold text-sky-100">IoT · Python</span><span aria-hidden="true" class="text-2xl text-slate-500 transition group-hover:text-sky-200">↗</span></div>
+          <h3 class="font-display text-xl font-bold text-white">Connected Smart Pill Dispenser</h3>
+          <p class="mt-3 text-sm leading-7 text-slate-400">A prototype concept for scheduled medication dispensing with device feedback and cloud-based status logging. Describe the implemented scheduling logic, safety handling, and how the device was tested.</p>
+          <div class="mt-5 flex flex-wrap gap-2"><span class="rounded-md bg-white/[0.05] px-2.5 py-1 text-xs text-slate-300">Raspberry Pi</span><span class="rounded-md bg-white/[0.05] px-2.5 py-1 text-xs text-slate-300">Firebase</span><span class="rounded-md bg-white/[0.05] px-2.5 py-1 text-xs text-slate-300">Servo / GPIO</span></div>
+          <div class="mt-6 border-t border-white/10 pt-5"><p class="text-xs font-semibold uppercase tracking-wider text-slate-500">Add before publishing</p><p class="mt-2 text-sm leading-6 text-slate-300">System diagram · photos/video · failure cases tested · repository README</p></div>
+          <a href="https://github.com/Touka-Juini/smart-pill-box" target="_blank" rel="noopener noreferrer" class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-sky-200 hover:text-white">View project repository <span aria-hidden="true">↗</span></a>
         </article>
 
-        <!-- Project 2: Smart Greenhouse -->
-        <article class="group relative bg-slate-900/60 border border-slate-800/80 hover:border-slate-700/90 rounded-2xl p-6 sm:p-8 transition-all duration-300 hover:shadow-xl hover:shadow-sky-500/5">
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
-            <h3 class="text-xl font-bold text-white group-hover:text-sky-400 transition">
-              Smart Greenhouse Environmental Automation
-            </h3>
-            <span class="inline-self-start sm:inline-self-auto text-xs font-mono text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3 py-1 rounded-full">
-              Sensors • Actuators • Control Loops
-            </span>
-          </div>
-
-          <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-4 font-normal">
-            Automated environmental control and microclimate regulation system utilizing continuous multi-sensor telemetry collection and closed-loop actuator feedback.
-          </p>
-
-          <a href="https://github.com/Touka-Juini" target="_blank" class="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-sky-400 hover:text-sky-300 transition group/link">
-            <span>Explore Architecture Details</span>
-            <span class="group-hover/link:translate-x-1 transition-transform">&rarr;</span>
-          </a>
+        <article class="group rounded-2xl border border-white/10 bg-panel/70 p-6 transition duration-300 hover:-translate-y-1 hover:border-emerald-200/30 sm:p-7">
+          <div class="mb-6 flex items-start justify-between gap-4"><span class="rounded-lg border border-emerald-300/20 bg-emerald-300/10 px-3 py-1.5 text-xs font-semibold text-emerald-100">Sensors · Automation</span><span aria-hidden="true" class="text-2xl text-slate-500 transition group-hover:text-emerald-200">↗</span></div>
+          <h3 class="font-display text-xl font-bold text-white">Smart Greenhouse Automation</h3>
+          <p class="mt-3 text-sm leading-7 text-slate-400">An environmental monitoring and automation project. Explain which sensors and actuators were used, what conditions trigger actions, and how readings and control behaviour were validated.</p>
+          <div class="mt-5 flex flex-wrap gap-2"><span class="rounded-md bg-white/[0.05] px-2.5 py-1 text-xs text-slate-300">Sensors</span><span class="rounded-md bg-white/[0.05] px-2.5 py-1 text-xs text-slate-300">Actuators</span><span class="rounded-md bg-white/[0.05] px-2.5 py-1 text-xs text-slate-300">Control logic</span></div>
+          <div class="mt-6 border-t border-white/10 pt-5"><p class="text-xs font-semibold uppercase tracking-wider text-slate-500">Add before publishing</p><p class="mt-2 text-sm leading-6 text-slate-300">Exact hardware list · wiring diagram · control thresholds · test observations</p></div>
+          <!-- Replace this profile URL with the actual greenhouse repository or report URL. -->
+          <a href="https://github.com/Touka-Juini" target="_blank" rel="noopener noreferrer" class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-emerald-200 hover:text-white">Find project materials <span aria-hidden="true">↗</span></a>
         </article>
 
-        <!-- Project 3: PFE Project -->
-        <article class="group relative bg-slate-900/60 border border-slate-800/80 hover:border-slate-700/90 rounded-2xl p-6 sm:p-8 transition-all duration-300 hover:shadow-xl hover:shadow-sky-500/5">
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
-            <h3 class="text-xl font-bold text-white group-hover:text-sky-400 transition">
-              Système embarqué de surveillance du trafic routier en temps réel
-            </h3>
-            <span class="inline-self-start sm:inline-self-auto text-xs font-mono text-indigo-400 bg-indigo-500/10 border border-indigo-500/20 px-3 py-1 rounded-full">
-              Graduation Project (PFE)
-            </span>
+        <article class="group rounded-2xl border border-white/10 bg-panel/70 p-6 transition duration-300 hover:-translate-y-1 hover:border-indigo-200/30 sm:p-7 lg:col-span-2">
+          <div class="grid gap-6 md:grid-cols-[1fr_.75fr] md:items-start">
+            <div>
+              <div class="mb-5 inline-flex rounded-lg border border-indigo-300/20 bg-indigo-300/10 px-3 py-1.5 text-xs font-semibold text-indigo-100">Final-year project · Embedded systems</div>
+              <h3 class="font-display text-xl font-bold text-white">Real-Time Embedded Road Traffic Monitoring System</h3>
+              <p class="mt-3 text-sm leading-7 text-slate-400">A graduation project focused on real-time road-traffic monitoring. Use the final report to explain the system architecture, sensing or data inputs, processing approach, and intended output. Avoid claiming optimisation or real-time performance unless you measured and verified it.</p>
+            </div>
+            <div class="rounded-xl border border-white/10 bg-black/20 p-5">
+              <p class="text-xs font-semibold uppercase tracking-wider text-slate-500">Strong case-study structure</p>
+              <ol class="mt-3 space-y-3 text-sm leading-6 text-slate-300">
+                <li><span class="mr-2 text-sky-200">01</span>Problem and requirements</li>
+                <li><span class="mr-2 text-sky-200">02</span>Architecture and design choices</li>
+                <li><span class="mr-2 text-sky-200">03</span>Your individual contribution</li>
+                <li><span class="mr-2 text-sky-200">04</span>Testing, results, limitations</li>
+              </ol>
+            </div>
           </div>
-
-          <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-4 font-normal">
-            Real-time embedded traffic monitoring system designed to process vehicle flow, optimize signal timing, and handle live telemetry data processing at the edge.
-          </p>
-
-          <a href="https://github.com/Touka-Juini" target="_blank" class="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-sky-400 hover:text-sky-300 transition group/link">
-            <span>View PFE Summary & Technical Report</span>
-            <span class="group-hover/link:translate-x-1 transition-transform">&rarr;</span>
-          </a>
+          <!-- Replace this profile URL with the actual PFE repository, report, or project page. -->
+          <a href="https://github.com/Touka-Juini" target="_blank" rel="noopener noreferrer" class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-indigo-200 hover:text-white">View available project materials <span aria-hidden="true">↗</span></a>
         </article>
-
       </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="pt-8 border-t border-slate-800/80 text-center text-xs font-mono text-slate-400">
-      <p>© 2026 Touka Juini. Built & Hosted on GitHub Pages.</p>
+    <section id="skills" class="border-t border-white/10 py-16 sm:py-20">
+      <div class="grid gap-8 md:grid-cols-[.65fr_1.35fr]">
+        <div><p class="text-xs font-bold uppercase tracking-[.22em] text-sky-200">03 / Toolkit</p><h2 class="mt-3 font-display text-3xl font-bold text-white sm:text-4xl">Skills in context.</h2><p class="mt-4 text-sm leading-7 text-slate-400">Only list tools you can explain and use. Adjust these groups to match your actual coursework and project evidence.</p></div>
+        <div class="grid gap-4 sm:grid-cols-2">
+          <div class="rounded-2xl border border-white/10 bg-white/[0.025] p-5"><h3 class="font-semibold text-white">Programming</h3><p class="mt-3 text-sm leading-7 text-slate-400">C / C++ · Python</p></div>
+          <div class="rounded-2xl border border-white/10 bg-white/[0.025] p-5"><h3 class="font-semibold text-white">Embedded & hardware</h3><p class="mt-3 text-sm leading-7 text-slate-400">Raspberry Pi · STM32 / AVR · GPIO · PWM</p></div>
+          <div class="rounded-2xl border border-white/10 bg-white/[0.025] p-5"><h3 class="font-semibold text-white">Communication</h3><p class="mt-3 text-sm leading-7 text-slate-400">I²C · SPI · UART</p></div>
+          <div class="rounded-2xl border border-white/10 bg-white/[0.025] p-5"><h3 class="font-semibold text-white">Cloud & data</h3><p class="mt-3 text-sm leading-7 text-slate-400">Firebase Firestore (if used directly in your project)</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="border-t border-white/10 py-16 sm:py-20">
+      <div class="grid gap-8 md:grid-cols-[.65fr_1.35fr]">
+        <div><p class="text-xs font-bold uppercase tracking-[.22em] text-sky-200">04 / Background</p><h2 class="mt-3 font-display text-3xl font-bold text-white sm:text-4xl">Education & experience.</h2></div>
+        <div class="space-y-6">
+          <article class="border-l border-sky-200/40 pl-5">
+            <p class="text-xs font-semibold uppercase tracking-wider text-sky-200">2022 — 2025</p>
+            <h3 class="mt-2 font-display text-lg font-bold text-white">Licence in Computer Science — Microcomputing & Embedded Systems</h3>
+            <p class="mt-1 text-sm text-slate-400">ISAMM · Tunisia</p>
+            <p class="mt-3 text-sm leading-7 text-slate-400">Graduated in June 2025. Add selected relevant coursework, your final-year project link, and any academic distinctions that are useful for the opportunity.</p>
+          </article>
+          <article class="border-l border-white/15 pl-5">
+            <p class="text-xs font-semibold uppercase tracking-wider text-slate-400">July — September 2024</p>
+            <h3 class="mt-2 font-display text-lg font-bold text-white">Technical Support & Mobile Application Testing</h3>
+            <p class="mt-1 text-sm text-slate-400">ONSR · Tunisia</p>
+            <p class="mt-3 text-sm leading-7 text-slate-400">Add the actual tasks you performed, testing methods or tools used, and one concrete contribution. Keep this description aligned with your internship certificate or report.</p>
+          </article>
+          <article class="border-l border-white/15 pl-5">
+            <p class="text-xs font-semibold uppercase tracking-wider text-slate-400">2022 — 2025</p>
+            <h3 class="mt-2 font-display text-lg font-bold text-white">Member — Robotics Club</h3>
+            <p class="mt-1 text-sm text-slate-400">ISAMM</p>
+            <p class="mt-3 text-sm leading-7 text-slate-400">Add workshops, builds, events, teamwork, or technical activities you personally participated in.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="border-t border-white/10 py-16 sm:py-24">
+      <div class="overflow-hidden rounded-[1.75rem] border border-sky-200/20 bg-gradient-to-br from-sky-300/[0.10] via-panel to-indigo-300/[0.07] p-7 sm:p-12">
+        <p class="text-xs font-bold uppercase tracking-[.22em] text-sky-200">05 / Contact</p>
+        <div class="mt-4 grid gap-8 md:grid-cols-[1fr_auto] md:items-end">
+          <div><h2 class="font-display text-3xl font-bold text-white sm:text-5xl">Let’s build something useful.</h2><p class="mt-4 max-w-xl leading-7 text-slate-400">For engineering opportunities, project collaboration, or academic enquiries, connect with me through the profiles below.</p></div>
+          <div class="flex flex-wrap gap-3">
+            <a href="https://www.linkedin.com/in/touka-juini/" target="_blank" rel="noopener noreferrer" class="rounded-xl bg-sky-300 px-5 py-3 text-sm font-bold text-slate-950 transition hover:bg-sky-200">Connect on LinkedIn ↗</a>
+            <a href="https://github.com/Touka-Juini" target="_blank" rel="noopener noreferrer" class="rounded-xl border border-white/15 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/[0.06]">GitHub ↗</a>
+          </div>
+        </div>
+        <!-- Optional: add a public professional email address if you want it displayed. -->
+      </div>
+    </section>
+
+    <footer class="flex flex-col gap-2 border-t border-white/10 py-7 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between">
+      <p>© <span id="year">2026</span> Touka Juini. All rights reserved.</p>
+      <a href="#home" class="transition hover:text-slate-300">Back to top ↑</a>
     </footer>
-
   </main>
-
+  <script>
+    // Keep the copyright year current without requiring a manual edit.
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
+'''
+out = Path("/mnt/data/touka_portfolio_improved.html")
+out.write_text(html, encoding="utf-8")
+print(f"Created {out} ({out.stat().st_size} bytes)")
