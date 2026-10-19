@@ -345,100 +345,213 @@
         
         
 
-<article class="group rounded-2xl border border-white/10 bg-panel/70 p-6 transition duration-300 hover:-translate-y-1 hover:border-emerald-200/30 sm:p-7">
-  <div class="mb-6 flex items-start justify-between gap-4">
-    <span class="rounded-lg border border-emerald-300/20 bg-emerald-300/10 px-3 py-1.5 text-xs font-semibold text-emerald-100">
-      Embedded Systems · Automation
-    </span>
-    <span aria-hidden="true" class="text-2xl text-slate-500 transition group-hover:text-emerald-200">↗</span>
-  </div>
 
-  <h3 class="font-display text-xl font-bold text-white">
-    Smart Greenhouse Automation
-  </h3>
+<article class="group overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-b from-panel to-[#0d1425] transition duration-300 hover:-translate-y-1 hover:border-emerald-200/30">
 
-  <p class="mt-3 text-sm leading-7 text-slate-400">
-    An Arduino-based greenhouse prototype designed to monitor environmental
-    conditions and support automated plant care. The system combines sensors,
-    actuators, and a Python desktop dashboard for monitoring and control.
-  </p>
+  <!-- Project image gallery -->
+  <div class="space-y-2 bg-black/20 p-2 sm:p-3">
 
-  <div class="mt-6">
-    <h4 class="text-sm font-semibold text-white">Key Features</h4>
-    <ul class="mt-3 space-y-2 text-sm leading-6 text-slate-400">
-      <li class="flex gap-2">
-        <span class="text-emerald-200">✓</span>
-        Temperature and humidity monitoring using a DHT22 sensor.
-      </li>
-      <li class="flex gap-2">
-        <span class="text-emerald-200">✓</span>
-        Ambient light detection and automatic LED control.
-      </li>
-      <li class="flex gap-2">
-        <span class="text-emerald-200">✓</span>
-        Water-level monitoring using a dedicated sensor module.
-      </li>
-      <li class="flex gap-2">
-        <span class="text-emerald-200">✓</span>
-        Python dashboard designed for sensor monitoring and fan control.
-      </li>
-      <li class="flex gap-2">
-        <span class="text-emerald-200">✓</span>
-        Integration of fans, LEDs, a water pump, and an RGB LCD.
-      </li>
-    </ul>
-  </div>
-
-  <div class="mt-6">
-    <h4 class="text-sm font-semibold text-white">My Contribution</h4>
-    <p class="mt-2 text-sm leading-7 text-slate-400">
-      Developed the Python desktop dashboard and worked on sensor and actuator
-      integration, particularly the water-level sensor and fans, connecting
-      hardware monitoring with the user interface.
-    </p>
-  </div>
-
-  <div class="mt-6 flex flex-wrap gap-2">
-    <span class="rounded-md bg-white/[0.05] px-2.5 py-1 text-xs text-slate-300">Arduino UNO</span>
-    <span class="rounded-md bg-white/[0.05] px-2.5 py-1 text-xs text-slate-300">C++</span>
-    <span class="rounded-md bg-white/[0.05] px-2.5 py-1 text-xs text-slate-300">Python</span>
-    <span class="rounded-md bg-white/[0.05] px-2.5 py-1 text-xs text-slate-300">Tkinter</span>
-    <span class="rounded-md bg-white/[0.05] px-2.5 py-1 text-xs text-slate-300">PySerial</span>
-    <span class="rounded-md bg-white/[0.05] px-2.5 py-1 text-xs text-slate-300">Sensors & Actuators</span>
-  </div>
-
-  <div class="mt-6 border-t border-white/10 pt-5">
-    <p class="text-xs font-semibold uppercase tracking-wider text-slate-500">
-      Project Status
-    </p>
-    <p class="mt-2 text-sm leading-6 text-slate-400">
-      Functional prototype under development; some features still require
-      further testing and validation.
-    </p>
-  </div>
-
-  <div class="mt-6 flex flex-wrap items-center gap-4">
-    <a
-      href="https://github.com/Touka-Juini/smart-greenhouse"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="inline-flex items-center gap-2 text-sm font-semibold text-emerald-200 transition hover:text-white"
-    >
-      View Source Code
-      <span aria-hidden="true">↗</span>
+    <!-- Main project photo -->
+    <a href="assets/images/greenhouse/prototype.jpg"
+       target="_blank" rel="noopener noreferrer"
+       class="block overflow-hidden rounded-xl">
+      <img
+        src="assets/images/greenhouse/prototype.jpg"
+        alt="Smart Greenhouse Automation physical prototype"
+        class="aspect-[16/9] w-full object-cover transition duration-500 group-hover:scale-[1.01]"
+        loading="lazy"
+      >
     </a>
 
-    <a
-      href="https://github.com/Touka-Juini/smart-greenhouse/blob/main/docs/smart-greenhouse-rapport.pdf"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="inline-flex items-center gap-2 text-sm font-semibold text-emerald-200 transition hover:text-white"
-    >
-      Read Project Report
-      <span aria-hidden="true">↗</span>
-    </a>
+    <!-- Supporting project photos -->
+    <div class="grid grid-cols-2 gap-2">
+
+      <a href="assets/images/greenhouse/dashboard.png"
+         target="_blank" rel="noopener noreferrer"
+         class="overflow-hidden rounded-lg border border-white/10">
+        <img
+          src="assets/images/greenhouse/dashboard.png"
+          alt="Python desktop dashboard for greenhouse monitoring"
+          class="aspect-[4/3] w-full object-cover transition duration-300 hover:scale-[1.03]"
+          loading="lazy"
+        >
+      </a>
+
+      <a href="assets/images/greenhouse/hardware.jpg"
+         target="_blank" rel="noopener noreferrer"
+         class="overflow-hidden rounded-lg border border-white/10">
+        <img
+          src="assets/images/greenhouse/hardware.jpg"
+          alt="Arduino and sensor hardware used in the greenhouse project"
+          class="aspect-[4/3] w-full object-cover transition duration-300 hover:scale-[1.03]"
+          loading="lazy"
+        >
+      </a>
+
+      <a href="assets/images/greenhouse/sensors.jpg"
+         target="_blank" rel="noopener noreferrer"
+         class="overflow-hidden rounded-lg border border-white/10">
+        <img
+          src="assets/images/greenhouse/sensors.jpg"
+          alt="Greenhouse temperature, humidity, light and water-level sensors"
+          class="aspect-[4/3] w-full object-cover transition duration-300 hover:scale-[1.03]"
+          loading="lazy"
+        >
+      </a>
+
+      <a href="assets/images/greenhouse/system.jpg"
+         target="_blank" rel="noopener noreferrer"
+         class="overflow-hidden rounded-lg border border-white/10">
+        <img
+          src="assets/images/greenhouse/system.jpg"
+          alt="Greenhouse system components and connections"
+          class="aspect-[4/3] w-full object-cover transition duration-300 hover:scale-[1.03]"
+          loading="lazy"
+        >
+      </a>
+
+    </div>
+
+    <p class="px-1 pt-1 text-xs text-slate-500">
+      Project gallery · Select any image to view it at full size
+    </p>
+  </div>
+
+  <div class="p-6 sm:p-7">
+
+    <!-- Project heading -->
+    <div class="flex flex-wrap items-center justify-between gap-3">
+      <span class="rounded-full border border-emerald-300/20 bg-emerald-300/10 px-3 py-1.5 text-xs font-semibold text-emerald-100">
+        Embedded Systems · Automation
+      </span>
+      <span class="text-xs font-medium text-slate-500">Academic Project</span>
+    </div>
+
+    <h3 class="mt-5 font-display text-2xl font-bold tracking-tight text-white">
+      Smart Greenhouse Automation
+    </h3>
+
+    <p class="mt-3 text-sm leading-7 text-slate-400">
+      An Arduino-based greenhouse prototype combining environmental sensors,
+      electronic actuators, and a Python desktop application. The project
+      explores environmental monitoring and automated responses to changing
+      greenhouse conditions.
+    </p>
+
+    <!-- Technologies -->
+    <div class="mt-5 flex flex-wrap gap-2">
+      <span class="rounded-lg border border-white/[0.08] bg-white/[0.04] px-3 py-1.5 text-xs text-slate-300">Arduino UNO</span>
+      <span class="rounded-lg border border-white/[0.08] bg-white/[0.04] px-3 py-1.5 text-xs text-slate-300">C++</span>
+      <span class="rounded-lg border border-white/[0.08] bg-white/[0.04] px-3 py-1.5 text-xs text-slate-300">Python</span>
+      <span class="rounded-lg border border-white/[0.08] bg-white/[0.04] px-3 py-1.5 text-xs text-slate-300">Tkinter</span>
+      <span class="rounded-lg border border-white/[0.08] bg-white/[0.04] px-3 py-1.5 text-xs text-slate-300">PySerial</span>
+      <span class="rounded-lg border border-white/[0.08] bg-white/[0.04] px-3 py-1.5 text-xs text-slate-300">DHT22</span>
+      <span class="rounded-lg border border-white/[0.08] bg-white/[0.04] px-3 py-1.5 text-xs text-slate-300">Light Sensor</span>
+      <span class="rounded-lg border border-white/[0.08] bg-white/[0.04] px-3 py-1.5 text-xs text-slate-300">Actuators</span>
+    </div>
+
+    <!-- System highlights -->
+    <div class="mt-7">
+      <h4 class="text-xs font-bold uppercase tracking-[.18em] text-emerald-200">
+        System highlights
+      </h4>
+
+      <div class="mt-4 grid gap-3 sm:grid-cols-2">
+
+        <div class="rounded-xl border border-white/[0.08] bg-white/[0.025] p-4 transition hover:border-emerald-200/20">
+          <div class="flex items-center gap-3">
+            <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-emerald-300/10 text-emerald-200" aria-hidden="true">01</span>
+            <h4 class="text-sm font-semibold text-white">Environmental monitoring</h4>
+          </div>
+          <p class="mt-3 text-xs leading-6 text-slate-400">
+            A DHT22 sensor measures temperature and humidity, while a light
+            sensor monitors ambient illumination.
+          </p>
+        </div>
+
+        <div class="rounded-xl border border-white/[0.08] bg-white/[0.025] p-4 transition hover:border-emerald-200/20">
+          <div class="flex items-center gap-3">
+            <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-emerald-300/10 text-emerald-200" aria-hidden="true">02</span>
+            <h4 class="text-sm font-semibold text-white">Automatic lighting</h4>
+          </div>
+          <p class="mt-3 text-xs leading-6 text-slate-400">
+            The Arduino controls LED lighting in response to readings from
+            the ambient light sensor.
+          </p>
+        </div>
+
+        <div class="rounded-xl border border-white/[0.08] bg-white/[0.025] p-4 transition hover:border-emerald-200/20">
+          <div class="flex items-center gap-3">
+            <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-emerald-300/10 text-emerald-200" aria-hidden="true">03</span>
+            <h4 class="text-sm font-semibold text-white">Water-level sensing</h4>
+          </div>
+          <p class="mt-3 text-xs leading-6 text-slate-400">
+            A dedicated water-level sensor provides readings for monitoring
+            the water supply.
+          </p>
+        </div>
+
+        <div class="rounded-xl border border-white/[0.08] bg-white/[0.025] p-4 transition hover:border-emerald-200/20">
+          <div class="flex items-center gap-3">
+            <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-emerald-300/10 text-emerald-200" aria-hidden="true">04</span>
+            <h4 class="text-sm font-semibold text-white">Desktop dashboard</h4>
+          </div>
+          <p class="mt-3 text-xs leading-6 text-slate-400">
+            A Python and Tkinter interface was developed for environmental
+            monitoring and intended fan-control functions.
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- My contribution -->
+    <div class="mt-7 rounded-xl border border-emerald-300/15 bg-emerald-300/[0.045] p-5 sm:p-6">
+      <p class="text-xs font-bold uppercase tracking-[.18em] text-emerald-200">
+        My contribution
+      </p>
+      <p class="mt-3 text-sm leading-7 text-slate-300">
+        Developed the Python desktop dashboard and worked on integrating
+        sensors and actuators, particularly the water-level sensor and fans,
+        connecting hardware monitoring with the user interface.
+      </p>
+    </div>
+
+    <!-- Project status -->
+    <div class="mt-5">
+      <p class="text-xs font-semibold uppercase tracking-wider text-slate-500">
+        Project status
+      </p>
+      <p class="mt-2 text-sm leading-6 text-slate-400">
+        Prototype partially working; some functions require further testing
+        and validation.
+      </p>
+    </div>
+
+    <!-- Project links -->
+    <div class="mt-7 flex flex-col gap-3 border-t border-white/10 pt-6 sm:flex-row">
+      <a
+        href="https://github.com/Touka-Juini/smart-greenhouse"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex flex-1 items-center justify-center gap-2 rounded-xl bg-emerald-300 px-4 py-3 text-sm font-bold text-slate-950 transition hover:bg-emerald-200"
+      >
+        View source code <span aria-hidden="true">↗</span>
+      </a>
+
+      <a
+        href="https://github.com/Touka-Juini/smart-greenhouse/blob/main/docs/smart-greenhouse-rapport.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex flex-1 items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/[0.03] px-4 py-3 text-sm font-semibold text-white transition hover:border-emerald-200/40 hover:bg-white/[0.06]"
+      >
+        Read technical report <span aria-hidden="true">↗</span>
+      </a>
+    </div>
+
   </div>
 </article>
+
 
 
 
