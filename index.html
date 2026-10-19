@@ -156,32 +156,70 @@
       </div>
 
       <div class="grid gap-5 lg:grid-cols-2">
-                       <article class="group overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-b from-panel to-[#0d1425] transition duration-300 hover:-translate-y-1 hover:border-sky-200/30 hover:shadow-glow">
+               <article class="group overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-b from-panel to-[#0d1425] transition duration-300 hover:-translate-y-1 hover:border-sky-200/30 hover:shadow-glow">
 
-          <!-- Project photo gallery -->
-          <div class="grid grid-cols-2 gap-1.5 bg-black/20 p-2">
-            <img
-              src="assets/smart-medicine-box.jpg"
-              alt="Smart Medicine Box prototype"
-              class="col-span-2 aspect-[16/9] w-full rounded-xl object-cover"
-              loading="lazy"
-            >
-            <img
-              src="assets/smart-medicine-box-hardware.jpg"
-              alt="Smart Medicine Box electronic components"
-              class="aspect-[4/3] w-full rounded-lg object-cover"
-              loading="lazy"
-            >
-            <img
-              src="assets/smart-medicine-box-app.jpg"
-              alt="Smart Medicine Box mobile application"
-              class="aspect-[4/3] w-full rounded-lg object-cover"
-              loading="lazy"
-            >
+          <!-- Project image gallery -->
+          <div class="space-y-2 bg-black/20 p-2 sm:p-3">
+            <a href="assets/images/prototype.jpg" target="_blank" rel="noopener noreferrer"
+               class="block overflow-hidden rounded-xl">
+              <img
+                src="assets/images/prototype.jpg"
+                alt="Physical Smart Medicine Box prototype"
+                class="aspect-[16/9] w-full object-cover transition duration-500 group-hover:scale-[1.01]"
+                loading="lazy"
+              >
+            </a>
+
+            <div class="grid grid-cols-2 gap-2">
+              <a href="assets/images/app.png" target="_blank" rel="noopener noreferrer"
+                 class="overflow-hidden rounded-lg border border-white/10">
+                <img
+                  src="assets/images/app.png"
+                  alt="Smart Medicine Box mobile application"
+                  class="aspect-[4/3] w-full object-cover transition duration-300 hover:scale-[1.03]"
+                  loading="lazy"
+                >
+              </a>
+
+              <a href="assets/images/configuration%20du%20temps.jpg" target="_blank" rel="noopener noreferrer"
+                 class="overflow-hidden rounded-lg border border-white/10">
+                <img
+                  src="assets/images/configuration%20du%20temps.jpg"
+                  alt="Medication time configuration interface"
+                  class="aspect-[4/3] w-full object-cover transition duration-300 hover:scale-[1.03]"
+                  loading="lazy"
+                >
+              </a>
+
+              <a href="assets/images/firebase.png" target="_blank" rel="noopener noreferrer"
+                 class="overflow-hidden rounded-lg border border-white/10">
+                <img
+                  src="assets/images/firebase.png"
+                  alt="Firebase integration for the project"
+                  class="aspect-[4/3] w-full object-contain bg-white p-2 transition duration-300 hover:scale-[1.03]"
+                  loading="lazy"
+                >
+              </a>
+
+              <a href="assets/images/imagined%20stucture.png" target="_blank" rel="noopener noreferrer"
+                 class="overflow-hidden rounded-lg border border-white/10">
+                <img
+                  src="assets/images/imagined%20stucture.png"
+                  alt="Conceptual Smart Medicine Box system structure"
+                  class="aspect-[4/3] w-full object-contain bg-white p-2 transition duration-300 hover:scale-[1.03]"
+                  loading="lazy"
+                >
+              </a>
+            </div>
+
+            <p class="px-1 pt-1 text-xs text-slate-500">
+              Project gallery · Select any image to view it at full size
+            </p>
           </div>
 
           <div class="p-6 sm:p-7">
-            <!-- Heading -->
+
+            <!-- Project heading -->
             <div class="flex flex-wrap items-center justify-between gap-3">
               <span class="rounded-full border border-sky-300/20 bg-sky-300/10 px-3 py-1.5 text-xs font-semibold text-sky-100">
                 Embedded Systems · IoT
@@ -194,74 +232,97 @@
             </h3>
 
             <p class="mt-3 text-sm leading-7 text-slate-400">
-              An academic prototype combining embedded hardware, a mobile
-              application, and Firebase to support medication reminders
-              and notifications to a responsible family member.
+              An academic engineering project combining a Raspberry Pi,
+              electronic sensors, a mobile application, and Firebase to
+              support medication reminders and family notifications.
             </p>
 
-            <!-- Technology tags -->
+            <!-- Technologies -->
             <div class="mt-5 flex flex-wrap gap-2">
               <span class="rounded-lg border border-white/[0.08] bg-white/[0.04] px-3 py-1.5 text-xs text-slate-300">Raspberry Pi</span>
               <span class="rounded-lg border border-white/[0.08] bg-white/[0.04] px-3 py-1.5 text-xs text-slate-300">Python</span>
               <span class="rounded-lg border border-white/[0.08] bg-white/[0.04] px-3 py-1.5 text-xs text-slate-300">Firebase</span>
+              <span class="rounded-lg border border-white/[0.08] bg-white/[0.04] px-3 py-1.5 text-xs text-slate-300">FCM</span>
               <span class="rounded-lg border border-white/[0.08] bg-white/[0.04] px-3 py-1.5 text-xs text-slate-300">RFID</span>
               <span class="rounded-lg border border-white/[0.08] bg-white/[0.04] px-3 py-1.5 text-xs text-slate-300">Weight Sensor</span>
               <span class="rounded-lg border border-white/[0.08] bg-white/[0.04] px-3 py-1.5 text-xs text-slate-300">Mobile App</span>
             </div>
 
-            <!-- Features -->
+            <!-- System highlights -->
             <div class="mt-7">
               <h4 class="text-xs font-bold uppercase tracking-[.18em] text-sky-200">
                 System highlights
               </h4>
 
               <div class="mt-4 grid gap-3 sm:grid-cols-2">
-                <div class="rounded-xl border border-white/[0.08] bg-white/[0.025] p-4">
-                  <p class="text-sm font-semibold text-white">Medication reminders</p>
-                  <p class="mt-1.5 text-xs leading-6 text-slate-400">
-                    Scheduled reminders through the device's buzzer.
+                <div class="rounded-xl border border-white/[0.08] bg-white/[0.025] p-4 transition hover:border-sky-200/20">
+                  <div class="flex items-center gap-3">
+                    <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-sky-300/10 text-sky-200" aria-hidden="true">01</span>
+                    <h4 class="text-sm font-semibold text-white">Medication reminders</h4>
+                  </div>
+                  <p class="mt-3 text-xs leading-6 text-slate-400">
+                    Medication schedules are configured through the mobile app, with audible reminders from the device.
                   </p>
                 </div>
 
-                <div class="rounded-xl border border-white/[0.08] bg-white/[0.025] p-4">
-                  <p class="text-sm font-semibold text-white">Access authorization</p>
-                  <p class="mt-1.5 text-xs leading-6 text-slate-400">
-                    RFID-based authorization checks.
+                <div class="rounded-xl border border-white/[0.08] bg-white/[0.025] p-4 transition hover:border-sky-200/20">
+                  <div class="flex items-center gap-3">
+                    <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-sky-300/10 text-sky-200" aria-hidden="true">02</span>
+                    <h4 class="text-sm font-semibold text-white">RFID authorization</h4>
+                  </div>
+                  <p class="mt-3 text-xs leading-6 text-slate-400">
+                    The RFID sensor checks access authorization as part of the device workflow.
                   </p>
                 </div>
 
-                <div class="rounded-xl border border-white/[0.08] bg-white/[0.025] p-4">
-                  <p class="text-sm font-semibold text-white">Weight monitoring</p>
-                  <p class="mt-1.5 text-xs leading-6 text-slate-400">
-                    Weight changes help indicate possible medication removal.
+                <div class="rounded-xl border border-white/[0.08] bg-white/[0.025] p-4 transition hover:border-sky-200/20">
+                  <div class="flex items-center gap-3">
+                    <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-sky-300/10 text-sky-200" aria-hidden="true">03</span>
+                    <h4 class="text-sm font-semibold text-white">Weight monitoring</h4>
+                  </div>
+                  <p class="mt-3 text-xs leading-6 text-slate-400">
+                    Weight changes help the system assess whether medication may have been removed.
                   </p>
                 </div>
 
-                <div class="rounded-xl border border-white/[0.08] bg-white/[0.025] p-4">
-                  <p class="text-sm font-semibold text-white">Family notifications</p>
-                  <p class="mt-1.5 text-xs leading-6 text-slate-400">
-                    Push notifications delivered through Firebase Cloud Messaging.
+                <div class="rounded-xl border border-white/[0.08] bg-white/[0.025] p-4 transition hover:border-sky-200/20">
+                  <div class="flex items-center gap-3">
+                    <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-sky-300/10 text-sky-200" aria-hidden="true">04</span>
+                    <h4 class="text-sm font-semibold text-white">Family notifications</h4>
+                  </div>
+                  <p class="mt-3 text-xs leading-6 text-slate-400">
+                    Firebase Cloud Messaging (FCM) delivers push notifications to a designated family member.
                   </p>
                 </div>
               </div>
             </div>
 
-            <!-- Personal contribution -->
-            <div class="mt-7 rounded-xl border border-sky-300/15 bg-sky-300/[0.045] p-5">
+            <!-- My contribution -->
+            <div class="mt-7 rounded-xl border border-sky-300/15 bg-sky-300/[0.045] p-5 sm:p-6">
               <p class="text-xs font-bold uppercase tracking-[.18em] text-sky-200">
                 My contribution
               </p>
               <p class="mt-3 text-sm leading-7 text-slate-300">
-                Developed the mobile application, worked on Firebase
-                integration and data management, contributed to software
-                testing, and prepared technical documentation.
+                Developed the mobile application, worked on Firebase integration
+                and data management, contributed to software testing, and
+                prepared parts of the technical documentation.
               </p>
             </div>
 
-            <!-- Links -->
+            <!-- Team -->
+            <div class="mt-5">
+              <p class="text-xs font-semibold uppercase tracking-wider text-slate-500">
+                Academic team project
+              </p>
+              <p class="mt-2 text-sm leading-6 text-slate-400">
+                Touka Juini · Yosr Laaouti · Farah Htira
+              </p>
+            </div>
+
+            <!-- Project links -->
             <div class="mt-7 flex flex-col gap-3 border-t border-white/10 pt-6 sm:flex-row">
               <a
-                href="https://github.com/Touka-Juini/smart-pill-box"
+                href="https://github.com/Touka-Juini/SMART-MEDICINE-BOX"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="inline-flex flex-1 items-center justify-center gap-2 rounded-xl bg-sky-300 px-4 py-3 text-sm font-bold text-slate-950 transition hover:bg-sky-200"
@@ -278,6 +339,7 @@
                 Read technical report <span aria-hidden="true">↗</span>
               </a>
             </div>
+
           </div>
         </article>
         
