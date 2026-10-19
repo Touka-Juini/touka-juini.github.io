@@ -555,26 +555,176 @@
 
 
 
-        <article class="group rounded-2xl border border-white/10 bg-panel/70 p-6 transition duration-300 hover:-translate-y-1 hover:border-indigo-200/30 sm:p-7 lg:col-span-2">
-          <div class="grid gap-6 md:grid-cols-[1fr_.75fr] md:items-start">
-            <div>
-              <div class="mb-5 inline-flex rounded-lg border border-indigo-300/20 bg-indigo-300/10 px-3 py-1.5 text-xs font-semibold text-indigo-100">Final-year project · Embedded systems</div>
-              <h3 class="font-display text-xl font-bold text-white">Real-Time Embedded Road Traffic Monitoring System</h3>
-              <p class="mt-3 text-sm leading-7 text-slate-400">A graduation project focused on real-time road-traffic monitoring. Use the final report to explain the system architecture, sensing or data inputs, processing approach, and intended output. Avoid claiming optimisation or real-time performance unless you measured and verified it.</p>
+        
+        <article class="group overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-b from-panel to-[#0d1425] transition duration-300 hover:-translate-y-1 hover:border-indigo-200/30 hover:shadow-glow lg:col-span-2">
+          <!-- Project gallery: one main photo and two supporting photos -->
+          <div class="space-y-2 bg-black/20 p-2 sm:p-3">
+            <a href="assets/images/proto1.png" target="_blank" rel="noopener noreferrer"
+               class="block overflow-hidden rounded-xl">
+              <img
+                src="assets/images/proto1.png"
+                alt="Real-Time Traffic Monitoring System prototype"
+                class="aspect-[16/9] w-full object-cover transition duration-500 group-hover:scale-[1.01]"
+                loading="lazy"
+              >
+            </a>
+            <div class="grid grid-cols-2 gap-2">
+              <a href="assets/images/dashboard.png" target="_blank" rel="noopener noreferrer"
+                 class="overflow-hidden rounded-lg border border-white/10">
+                <img
+                  src="assets/images/dashboard.png"
+                  alt="ESP32 traffic-monitoring sensor node and distance sensors"
+                  class="aspect-[4/3] w-full object-cover transition duration-300 hover:scale-[1.03]"
+                  loading="lazy"
+                >
+              </a>
+              <a href="assets/images/proto2.png" target="_blank" rel="noopener noreferrer"
+                 class="overflow-hidden rounded-lg border border-white/10">
+                <img
+                  src="assets/images/proto2.png"
+                  alt="Traffic monitoring dashboard or system test"
+                  class="aspect-[4/3] w-full object-cover transition duration-300 hover:scale-[1.03]"
+                  loading="lazy"
+                >
+              </a>
             </div>
-            <div class="rounded-xl border border-white/10 bg-black/20 p-5">
-              <p class="text-xs font-semibold uppercase tracking-wider text-slate-500">Strong case-study structure</p>
-              <ol class="mt-3 space-y-3 text-sm leading-6 text-slate-300">
-                <li><span class="mr-2 text-sky-200">01</span>Problem and requirements</li>
-                <li><span class="mr-2 text-sky-200">02</span>Architecture and design choices</li>
-                <li><span class="mr-2 text-sky-200">03</span>Your individual contribution</li>
-                <li><span class="mr-2 text-sky-200">04</span>Testing, results, limitations</li>
-              </ol>
+            <p class="px-1 pt-1 text-xs text-slate-500">
+              Project gallery · Select any image to view it at full size
+            </p>
+          </div>
+
+          <div class="p-6 sm:p-7">
+            <div class="flex flex-wrap items-center justify-between gap-3">
+              <span class="rounded-full border border-indigo-300/20 bg-indigo-300/10 px-3 py-1.5 text-xs font-semibold text-indigo-100">
+                Embedded Systems · IoT · Traffic Monitoring
+              </span>
+              <span class="text-xs font-medium text-slate-500">Final-year project · ISAMM</span>
+            </div>
+
+            <h3 class="mt-5 font-display text-2xl font-bold tracking-tight text-white">
+              Real-Time Traffic Monitoring System
+            </h3>
+
+            <p class="mt-3 text-sm leading-7 text-slate-400">
+              A sensor-based traffic-monitoring prototype built around two ESP32 nodes.
+              The nodes use distance sensors to detect passing vehicles and transmit
+              detection data over Wi-Fi via MQTT for monitoring. The project combines
+              embedded firmware, wireless messaging, a Python desktop dashboard, and
+              a database schema for organizing traffic records.
+            </p>
+
+            <!-- Technologies -->
+            <div class="mt-5 flex flex-wrap gap-2">
+              <span class="rounded-lg border border-white/[0.08] bg-white/[0.04] px-3 py-1.5 text-xs text-slate-300">ESP32</span>
+              <span class="rounded-lg border border-white/[0.08] bg-white/[0.04] px-3 py-1.5 text-xs text-slate-300">VL53L0X</span>
+              <span class="rounded-lg border border-white/[0.08] bg-white/[0.04] px-3 py-1.5 text-xs text-slate-300">HC-SR04</span>
+              <span class="rounded-lg border border-white/[0.08] bg-white/[0.04] px-3 py-1.5 text-xs text-slate-300">C/C++</span>
+              <span class="rounded-lg border border-white/[0.08] bg-white/[0.04] px-3 py-1.5 text-xs text-slate-300">Wi-Fi</span>
+              <span class="rounded-lg border border-white/[0.08] bg-white/[0.04] px-3 py-1.5 text-xs text-slate-300">MQTT</span>
+              <span class="rounded-lg border border-white/[0.08] bg-white/[0.04] px-3 py-1.5 text-xs text-slate-300">Python</span>
+              <span class="rounded-lg border border-white/[0.08] bg-white/[0.04] px-3 py-1.5 text-xs text-slate-300">Tkinter</span>
+              <span class="rounded-lg border border-white/[0.08] bg-white/[0.04] px-3 py-1.5 text-xs text-slate-300">SQLite</span>
+              <span class="rounded-lg border border-white/[0.08] bg-white/[0.04] px-3 py-1.5 text-xs text-slate-300">Flask · partial</span>
+            </div>
+
+            <!-- System highlights -->
+            <div class="mt-7">
+              <h4 class="text-xs font-bold uppercase tracking-[.18em] text-indigo-200">
+                System highlights
+              </h4>
+              <div class="mt-4 grid gap-3 sm:grid-cols-2">
+                <div class="rounded-xl border border-white/[0.08] bg-white/[0.025] p-4 transition hover:border-indigo-200/20">
+                  <div class="flex items-center gap-3">
+                    <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-indigo-300/10 text-indigo-200" aria-hidden="true">01</span>
+                    <h4 class="text-sm font-semibold text-white">Dual sensor nodes</h4>
+                  </div>
+                  <p class="mt-3 text-xs leading-6 text-slate-400">
+                    Two ESP32 nodes collect distance readings: both use a VL53L0X
+                    time-of-flight sensor, while Node 1 also includes an HC-SR04 ultrasonic sensor.
+                  </p>
+                </div>
+
+                <div class="rounded-xl border border-white/[0.08] bg-white/[0.025] p-4 transition hover:border-indigo-200/20">
+                  <div class="flex items-center gap-3">
+                    <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-indigo-300/10 text-indigo-200" aria-hidden="true">02</span>
+                    <h4 class="text-sm font-semibold text-white">MQTT data exchange</h4>
+                  </div>
+                  <p class="mt-3 text-xs leading-6 text-slate-400">
+                    The embedded nodes send vehicle-detection messages over Wi-Fi using MQTT.
+                  </p>
+                </div>
+
+                <div class="rounded-xl border border-white/[0.08] bg-white/[0.025] p-4 transition hover:border-indigo-200/20">
+                  <div class="flex items-center gap-3">
+                    <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-indigo-300/10 text-indigo-200" aria-hidden="true">03</span>
+                    <h4 class="text-sm font-semibold text-white">Desktop monitoring</h4>
+                  </div>
+                  <p class="mt-3 text-xs leading-6 text-slate-400">
+                    A Python and Tkinter interface displays incoming vehicle-count and
+                    distance data from MQTT messages.
+                  </p>
+                </div>
+
+                <div class="rounded-xl border border-white/[0.08] bg-white/[0.025] p-4 transition hover:border-indigo-200/20">
+                  <div class="flex items-center gap-3">
+                    <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-indigo-300/10 text-indigo-200" aria-hidden="true">04</span>
+                    <h4 class="text-sm font-semibold text-white">Traffic data structure</h4>
+                  </div>
+                  <p class="mt-3 text-xs leading-6 text-slate-400">
+                    An SQLite schema defines routes, sensor nodes, vehicle detections,
+                    and historical records. Flask and web visualisation were explored
+                    but remain partially implemented.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Engineering focus -->
+            <div class="mt-7 rounded-xl border border-indigo-300/15 bg-indigo-300/[0.045] p-5 sm:p-6">
+              <p class="text-xs font-bold uppercase tracking-[.18em] text-indigo-200">
+                Engineering focus
+              </p>
+              <p class="mt-3 text-sm leading-7 text-slate-300">
+                Embedded sensor integration, vehicle-detection logic, MQTT communication,
+                and desktop monitoring. Vehicle-speed estimates and classification depend
+                on the detection logic and calibration; they should be treated as estimates
+                rather than validated measurements.
+              </p>
+            </div>
+
+            <!-- Project status -->
+            <div class="mt-5">
+              <p class="text-xs font-semibold uppercase tracking-wider text-slate-500">
+                Project status
+              </p>
+              <p class="mt-2 text-sm leading-6 text-slate-400">
+                The integrated prototype was demonstrated working. The Flask backend and
+                web dashboard remain partially implemented.
+              </p>
+            </div>
+
+            <!-- Project links -->
+            <div class="mt-7 flex flex-col gap-3 border-t border-white/10 pt-6 sm:flex-row">
+              <a
+                href="https://github.com/Touka-Juini/real-time-traffic-monitoring-system"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex flex-1 items-center justify-center gap-2 rounded-xl bg-indigo-300 px-4 py-3 text-sm font-bold text-slate-950 transition hover:bg-indigo-200"
+              >
+                View source code <span aria-hidden="true">↗</span>
+              </a>
+              <a
+                href="https://github.com/Touka-Juini/real-time-traffic-monitoring-system#readme"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex flex-1 items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/[0.03] px-4 py-3 text-sm font-semibold text-white transition hover:border-indigo-200/40 hover:bg-white/[0.06]"
+              >
+                View README & documentation <span aria-hidden="true">↗</span>
+              </a>
             </div>
           </div>
-          <!-- Replace this profile URL with the actual PFE repository, report, or project page. -->
-          <a href="https://github.com/Touka-Juini" target="_blank" rel="noopener noreferrer" class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-indigo-200 hover:text-white">View available project materials <span aria-hidden="true">↗</span></a>
         </article>
+
       </div>
     </section>
 
